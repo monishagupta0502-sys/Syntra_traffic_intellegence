@@ -1,0 +1,6 @@
+{
+  "name": "SYNTRA — Urban Traffic Digital Twin",
+  "description": "Hyderabad Urban Traffic Network Intelligence & Digital Twin Platform for what-if scenario simulations, secondary congestion ripple analysis, and virtual control room operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

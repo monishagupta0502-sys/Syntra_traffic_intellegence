@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # SYNTRA React Frontend (AI Studio Port 3000)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:8000/api
+      - PORT=3000
+    depends_on:
+      - backend
+
+  # SYNTRA FastAPI Backend
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - SUMO_HOME=/usr/share/sumo
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./backend:/app/backend
+      - ./sumo:/app/sumo
+
+  # Eclipse SUMO Simulation Container (Optional for headless TraCI execution)
+  sumo:
+    image: eclipse/sumo:latest
+    container_name: syntra_sumo
+    command: sumo -c /sumo/configs/simulation.sumocfg --remote-port 8813
+    ports:
+      - "8813:8813"
+    volumes:
+      - ./sumo:/sumo
