@@ -7,6 +7,12 @@ SYNTRA is an operational digital twin for urban traffic networks. It models corr
 
 ---
 
+### 🌐 Live Prototype
+
+**[Launch the SYNTRA Traffic Intelligence Dashboard →](https://syntratrafficai.netlify.app/)**
+
+> Live demonstration of the SYNTRA urban traffic digital twin, including traffic visualization, congestion analysis, scenario simulation, and infrastructure impact analysis.
+
 ## Key Capabilities
 
 1. **Digital Twin Interactive Network Map**
